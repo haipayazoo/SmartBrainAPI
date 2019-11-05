@@ -10,7 +10,6 @@ const database = {
             id: '123',
             name: 'John',
             email: 'john@gmail.com',
-            password: 'cookies',
             entries: 0,
             joined: new Date()
         },
@@ -18,7 +17,6 @@ const database = {
             id: '124',
             name: 'Sally',
             email: 'sally@gmail.com',
-            password: 'apples',
             entries: 0,
             joined: new Date()
         }
@@ -35,7 +33,7 @@ app.get('/', (req, res) => {
 app.post('/signin', (req, res) => {
     if(req.body.email === database.users[0].email &&
         req.body.password === database.users[0].password) {
-            res.json(database.users[0]);
+        res.json(database.users[0]);
     } else {
         res.status(400).json('error logging in');
     }
@@ -47,7 +45,6 @@ app.post('/register', (req, res) => {
         id: '125',
         name: name,
         email: email,
-        password: password,
         entries: 0,
         joined: new Date()
     })
@@ -63,7 +60,7 @@ app.get('/profile/:id', (req, res) => {
             return res.json(user)
         }
     })
-    if(!found) {
+    if (!found) {
         res.status(400).json('user not found');
     }
 })
@@ -75,7 +72,7 @@ app.put('/image', (req, res) => {
         if(user.id === id) {
             found = true;
             user.entries++;
-            return res.json(user)
+            return res.json(user.entries);
         }
     })
     if(!found) {
