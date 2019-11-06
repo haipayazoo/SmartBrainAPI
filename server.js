@@ -1,6 +1,21 @@
 const express = require('express');
 const bcrypt = require('bcrypt-nodejs');
 const cors = require('cors');
+const knex = require('knex') 
+
+const postgres = knex({
+    client: 'pg',
+    connection: {
+        host : '127.0.0.1',
+        user : 'postgres',
+        password : '1!Qazxsw2',
+        database : 'smartbrain'
+    }
+});
+
+postgres.select('*').from('users').then(data => {
+    console.log(data);
+});
 
 const app = express();
 
@@ -9,6 +24,7 @@ const database = {
         {
             id: '123',
             name: 'John',
+            password: 'cookies',
             email: 'john@gmail.com',
             entries: 0,
             joined: new Date()
@@ -16,6 +32,7 @@ const database = {
         {
             id: '124',
             name: 'Sally',
+            password: 'apples',
             email: 'sally@gmail.com',
             entries: 0,
             joined: new Date()
