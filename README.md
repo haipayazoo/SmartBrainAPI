@@ -8,3 +8,4 @@ The application stores and fetches user information on a PostgreSQL relational d
 * cors
 * Express
 * knex
+* Clarifai API
