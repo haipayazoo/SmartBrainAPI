@@ -1,6 +1,6 @@
-FROM node:12.14.0-stretch
+FROM node:12.16.1
 
-WORKDIR /usr/src/smartbrainapi
+WORKDIR /usr/src/smart-brain-api
 
 COPY ./ ./
 

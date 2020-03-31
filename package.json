@@ -1,23 +1,28 @@
 {
-  "name": "smartbrainapi",
-  "version": "1.0.0",
-  "description": "smartbrain server",
-  "main": "server.js",
-  "scripts": {
-    "start": "node server.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "author": "Cameron Mathos",
-  "license": "ISC",
-  "devDependencies": {
-    "nodemon": "^1.19.4"
-  },
-  "dependencies": {
-    "bcrypt-nodejs": "0.0.3",
-    "clarifai": "^2.9.1",
-    "cors": "^2.8.5",
-    "express": "^4.17.1",
-    "knex": "^0.20.1",
-    "pg": "^7.12.1"
-  }
+	"name": "smartbrainapi",
+	"version": "1.0.0",
+	"description": "smartbrain server",
+	"main": "server.js",
+	"scripts": {
+		"start": "node server.js",
+		"test": "echo \"Error: no test specified\" && exit 1"
+	},
+	"author": "Cameron Mathos",
+	"license": "ISC",
+	"devDependencies": {
+		"minimist": "^1.2.5",
+		"nodemon": "^1.19.4"
+	},
+	"resolutions": {
+		"minimist": "^1.2.5"
+	},
+	"dependencies": {
+		"bcrypt-nodejs": "0.0.3",
+		"clarifai": "^2.9.1",
+		"cors": "^2.8.5",
+		"express": "^4.17.1",
+		"knex": "^0.20.1",
+		"morgan": "^1.10.0",
+		"pg": "^7.12.1"
+	}
 }

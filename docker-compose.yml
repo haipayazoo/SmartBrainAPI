@@ -1,0 +1,28 @@
+version: '3.7'
+
+# Backend API
+services:
+  smart-brain-api:
+    container_name: backend
+    # image: node:12.16.1
+    build: ./
+    command: npm start
+    working_dir: /usr/src/smart-brain-api
+    environment:
+      POSTGRES_URI: postgres://haipa:secret@postgres/smart-brain-docker
+    links:
+      - postgres
+    ports:
+      - '3000:3000'
+    volumes:
+      - //c/Users/cmyaz/Documents/Programming_Projects/SmartBrainAPI:/usr/src/smart-brain-api
+  # Postgres
+  postgres:
+    environment:
+      POSTGRES_USER: haipa
+      POSTGRES_PASSWORD: secret
+      POSTGRES_DB: smart-brain-docker
+      POSTGRES_HOST: postgres
+    image: postgres
+    ports:
+      - '5432:5432'
